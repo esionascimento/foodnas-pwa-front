@@ -1,6 +1,16 @@
-import React from 'react'
+import React from 'react';
+import { useRouter } from 'next/router';
+import { FormData } from 'src/interface/Login';
+import { useForm } from 'react-hook-form';
 
 const LoginComponent = () => {
+  const router = useRouter();
+  const { register, handleSubmit } = useForm<FormData>();
+
+  const onSubmit = (data: any) => {
+    router.push("/dashboard");
+  };
+
   return (
     <>
       <section className="h-screen">
@@ -14,20 +24,19 @@ const LoginComponent = () => {
               />
             </div>
             <div className="md:w-8/12 lg:w-5/12 lg:ml-20">
-              <form>
-                <div className="mb-6">
+              <form onSubmit={onSubmit}>
+                <div>
+                  <label>Usuario: </label>
                   <input
-                    type="text"
+                    {...register("users")}
                     className="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                    placeholder="Email address"
                   />
                 </div>
-
-                <div className="mb-6">
+                <div>
+                  <label>Senha: </label>
                   <input
-                    type="password"
+                    {...register("password")}
                     className="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                    placeholder="Password"
                   />
                 </div>
 
@@ -48,14 +57,15 @@ const LoginComponent = () => {
                     Forgot password?
                   </a>
                 </div>
-
+                
                 <button
                   type="submit"
                   className="inline-block px-7 py-3 bg-blue-600 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out w-full"
                   data-mdb-ripple="true"
                   data-mdb-ripple-color="light"
+                  onClick={handleSubmit(onSubmit)}
                 >
-                  Sign in
+                  Entrar
                 </button>
 
                 <div
