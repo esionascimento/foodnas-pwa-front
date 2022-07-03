@@ -1,5 +1,6 @@
 import { MdAccountCircle, MdDeliveryDining } from "react-icons/md";
 import ButtonComponent from 'src/components/Buttons';
+import { buttonNewOrder } from 'src/config/dashboard';
 
 const HeaderComponent = () => {
   return (
@@ -21,7 +22,7 @@ const HeaderComponent = () => {
           <p className="text-base text-textColor text-center md:text-left">
             Distribuidora FoodNas
           </p>
-          <ButtonComponent text={"Fazer Pedido"} />
+          <ButtonComponent {...buttonNewOrder} />
         </div>
         <div className="py-2 bg-blue-400 flex-1">
           <p>World</p>
