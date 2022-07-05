@@ -1,7 +1,7 @@
 export const buttonNewOrder =
   {
     text: "Novo Pedido",
-    href: "/restaurante",
+    href: "/restaurantes",
     config: {
       maxLength: 8,
       step: 1,
