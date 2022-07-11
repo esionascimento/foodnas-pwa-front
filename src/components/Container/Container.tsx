@@ -16,11 +16,11 @@ const HeaderComponent = () => {
             </div>
           </div>
           <p className="text-[2.5rem] font-bold tracking-wide text-headingColor">
-          Distribuidora FoodNas{' '}
+          Distribuidora MoraGogi{' '}
             <span className="text-orange-700">Faça seu pedido</span>
           </p>
           <p className="text-base text-textColor text-center md:text-left">
-            Distribuidora FoodNas
+            Distribuidora MoraGogi
           </p>
           <ButtonComponent {...buttonNewOrder} />
         </div>
