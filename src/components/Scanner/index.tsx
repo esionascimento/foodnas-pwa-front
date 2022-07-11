@@ -1,6 +1,6 @@
 import react, { useState } from 'react';
 import MinScanner from "./minScanner";
-import Quagga from "quagga";
+import Quagga from '@ericblade/quagga2';
 
 const Scanner = () => {
   const [camera, setCamera] = useState(false);

@@ -12,7 +12,7 @@ const Scanner = (props: { onDetected: any; Quagga: any; }) => {
   } */
 
   useEffect(() => {
-    if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+    if (navigator.mediaDevices && typeof navigator.mediaDevices.getUserMedia === 'function') {
       Quagga.init(
         {
           inputStream: {
@@ -29,14 +29,15 @@ const Scanner = (props: { onDetected: any; Quagga: any; }) => {
             readers: ['ean_reader'],
           },
         },
-        (err: any) => {
+        function (err: any) {
           if (err) {
             console.log(err);
             alert(
-              'Erro ao abrir a câmera do dispositivo, por favor, dê a perissão de uso.'
+              'Erro ao abrir a câmera do dispositivo, por favor, dê a permissão de uso.'
             );
             return;
           }
+          console.log("Initialization finished. Ready to start");
           Quagga.start();
         },
         Quagga.onDetected(onDetected)
