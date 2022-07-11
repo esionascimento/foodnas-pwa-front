@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Link from 'next/link'
 import { MdAccountCircle } from "react-icons/md";
+import Image from 'next/image';
 
 const HeaderComponent = () => {
   const [isMenu, setIsMenu] = useState(false);
@@ -12,12 +13,17 @@ const HeaderComponent = () => {
   const logo = () => {
     return (
       <Link href="/">
-        <div className="flex items-center gap-2">
-          <MdAccountCircle
+        <div className="flex items-center gap-3">
+          <Image
+            src="/icons/maragogi-logo.webp"
+            width="70"
+            height="70"
             className="w-10 min-w-[40px] h-10 min-h-[40px] drop-shawdow-xl cursor-pointer"
             onClick={login}
           />
-          <p className="text-headingColor text-xl font-bold cursor-pointer">FoodNas</p>
+          <p className="text-headingColor text-xl font-bold cursor-pointer">
+            MoraGogi
+          </p>
         </div>
       </Link>
     )
@@ -59,7 +65,7 @@ const HeaderComponent = () => {
 
   return (
     <>
-      <header className="fixed z-50 w-screen p-2 px-2 md:p-6 md:px-16">
+      <header className="fixed z-50 w-screen p-2 px-2 md:px-16">
         <div className="hidden md:flex w-full h-full items-center justify-between">
           {logo()}
           <div className="flex items-center gap-8">
