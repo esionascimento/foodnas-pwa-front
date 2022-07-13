@@ -96,7 +96,13 @@ const HeaderComponent = () => {
               <p className="text-sm text-white font-bold">2</p>
             </div>
           </div>
-          {logo()}
+          <Link href="/dashboard">
+            <div className="flex items-center gap-3">
+              <p className="text-headingColor text-xl font-bold cursor-pointer">
+                MoraGogi
+              </p>
+            </div>
+          </Link>
           <div className='relative'>
             <MdAccountCircle
               className="w-10 min-w-[40px] h-10 min-h-[40px] drop-shawdow-xl cursor-pointer"
@@ -104,27 +110,33 @@ const HeaderComponent = () => {
             />
             {isMenu && (
               <div
-              className='w-40 bg-gray-50 shadow-lg rounded-lg flex flex-col absolute top-12 right-0 px-4 py-2'
+                className='w-40 bg-gray-50 shadow-lg rounded-lg flex flex-col absolute top-12 right-0 px-4 py-2'
               >
-                <p
-                  className='px-4 py-2 flex items-center gap-3 cursor-pointer hover:bg-slate-100 transition-all duration-100 ease-in-out text-textColor text-base'
-                >Novo Item</p>
-                  <Link href="/integracao">
-                    <li
-                      className="px-4 py-2 flex items-center gap-3 cursor-pointer hover:bg-slate-100 transition-all duration-100 ease-in-out text-textColor text-base"
-                    >
-                      Integração
-                    </li>
-                  </Link>
-                  <li className="px-4 py-2 flex items-center gap-3 cursor-pointer hover:bg-slate-100 transition-all duration-100 ease-in-out text-textColor text-base">Menu</li>
-                  <li className="px-4 py-2 flex items-center gap-3 cursor-pointer hover:bg-slate-100 transition-all duration-100 ease-in-out text-textColor text-base">About Us</li>
-                  <li className="px-4 py-2 flex items-center gap-3 cursor-pointer hover:bg-slate-100 transition-all duration-100 ease-in-out text-textColor text-base">Service</li>
-                <p
-                  className='px-4 py-2 flex rounded-md items-center shadow-md justify-center gap-3 cursor-pointer bg-gray-200 hover:bg-gray-300 transition-all duration-100 ease-in-out text-textColor text-base'
-                  onClick={logout}
-                >
-                  Sair
-                </p>
+                {configMenuLi.map((data) => {
+                  return (
+                    <>
+                    {data.text === 'Sair' ?
+                      (
+                        <li
+                          className='px-4 py-2 flex rounded-md items-center shadow-md justify-center gap-3 cursor-pointer bg-gray-200 hover:bg-gray-300 transition-all duration-100 ease-in-out text-textColor text-base'
+                          onClick={logout}
+                        >
+                          Sair
+                        </li>
+                      )
+                      : (
+                        <Link href="/integracao">
+                          <li
+                            className="px-4 py-2 flex items-center gap-3 cursor-pointer hover:bg-slate-100 transition-all duration-100 ease-in-out text-textColor text-base"
+                            >
+                            {data.text}
+                          </li>
+                        </Link>
+                      )
+                    }
+                    </>
+                  )
+                })}
               </div>
             )}
           </div>
