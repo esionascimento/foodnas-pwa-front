@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Link from 'next/link'
 import { MdAccountCircle } from "react-icons/md";
 import Image from 'next/image';
+import { configMenuLi } from 'src/config/header';
 
 const HeaderComponent = () => {
   const [isMenu, setIsMenu] = useState(false);
@@ -12,14 +13,13 @@ const HeaderComponent = () => {
 
   const logo = () => {
     return (
-      <Link href="/">
+      <Link href="/dashboard">
         <div className="flex items-center gap-3">
           <Image
             src="/icons/maragogi-logo.webp"
             width="70"
             height="70"
             className="w-10 min-w-[40px] h-10 min-h-[40px] drop-shawdow-xl cursor-pointer"
-            onClick={login}
           />
           <p className="text-headingColor text-xl font-bold cursor-pointer">
             MoraGogi
@@ -51,10 +51,15 @@ const HeaderComponent = () => {
   const menu = () => {
     return (
       <ul className="flex items-center gap-8">
-        <li className="text-base text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer">Home</li>
-        <li className="text-base text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer">Menu</li>
-        <li className="text-base text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer">About Us</li>
-        <li className="text-base text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer">Service</li>
+        {configMenuLi.map((data) => {
+          return (
+            <li
+              className="text-base text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer"
+            >
+              {data.text}
+            </li>
+          )
+        })}
       </ul>
     )
   }
@@ -104,12 +109,16 @@ const HeaderComponent = () => {
                 <p
                   className='px-4 py-2 flex items-center gap-3 cursor-pointer hover:bg-slate-100 transition-all duration-100 ease-in-out text-textColor text-base'
                 >Novo Item</p>
-                <ul className="flex flex-col px-4 py-2 gap-8">
-                  <li className="text-base text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer">Home</li>
-                  <li className="text-base text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer">Menu</li>
-                  <li className="text-base text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer">About Us</li>
-                  <li className="text-base text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer">Service</li>
-                </ul>
+                  <Link href="/integracao">
+                    <li
+                      className="px-4 py-2 flex items-center gap-3 cursor-pointer hover:bg-slate-100 transition-all duration-100 ease-in-out text-textColor text-base"
+                    >
+                      Integração
+                    </li>
+                  </Link>
+                  <li className="px-4 py-2 flex items-center gap-3 cursor-pointer hover:bg-slate-100 transition-all duration-100 ease-in-out text-textColor text-base">Menu</li>
+                  <li className="px-4 py-2 flex items-center gap-3 cursor-pointer hover:bg-slate-100 transition-all duration-100 ease-in-out text-textColor text-base">About Us</li>
+                  <li className="px-4 py-2 flex items-center gap-3 cursor-pointer hover:bg-slate-100 transition-all duration-100 ease-in-out text-textColor text-base">Service</li>
                 <p
                   className='px-4 py-2 flex rounded-md items-center shadow-md justify-center gap-3 cursor-pointer bg-gray-200 hover:bg-gray-300 transition-all duration-100 ease-in-out text-textColor text-base'
                   onClick={logout}
