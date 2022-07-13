@@ -1,6 +1,7 @@
 export const configMenuLi = [
-  {text: 'Home', href: ''},
-  {text: 'Loja', href: ''},
-  {text: 'About Us', href: ''},
-  {text: 'Service', href: ''}
+  {text: 'Loja', href: '/loja'},
+  {text: 'Integracao', href: '/integracao'},
+  {text: 'Sobre', href: '/sobre'},
+  {text: 'Serviços', href: '/servicos'},
+  {text: 'Sair', href: '/dashboard'}
 ]
