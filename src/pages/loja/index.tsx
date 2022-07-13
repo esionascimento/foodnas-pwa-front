@@ -2,7 +2,7 @@ import { Header } from "src/components/Header";
 // import LojasComponent from 'src/components/Lojas';
 import Scanner from 'src/components/Scanner';
 
-const Restaurantes = () => {
+const Loja = () => {
   return (
     <>
       <div className="w-screen h-auto flex flex-col bg-primary">
@@ -15,4 +15,4 @@ const Restaurantes = () => {
   )
 }
 
-export default Restaurantes;
+export default Loja;
