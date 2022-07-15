@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Link from 'next/link'
-import { MdAccountCircle } from "react-icons/md";
+import { MdAccountCircle, MdOutlineVisibilityOff } from "react-icons/md";
 import Image from 'next/image';
 import { configMenuLi } from 'src/config/header';
 
@@ -70,7 +70,7 @@ const HeaderComponent = () => {
 
   return (
     <>
-      <header className="fixed z-50 w-screen p-2 px-2 md:px-16">
+      <header className="fixed z-50 w-screen p-2 px-2 md:px-16 bg-bgHeader md:bg-white">
         <div className="hidden md:flex w-full h-full items-center justify-between">
           {logo()}
           <div className="flex items-center gap-8">
@@ -88,22 +88,27 @@ const HeaderComponent = () => {
         </div>
         {/* MOBILE */}
         <div className="flex items-center justify-between md:hidden w-full h-full">
-          <div className="relative flex items-center justify-center cursor-pointer">
+          {/* <div className="relative flex items-center justify-center cursor-pointer">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7" fill="none" viewBox="0 0 22 22" stroke="#4D4D4D" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
             </svg>
             <div className="absolute -top-3 -right-3 w-6 h-6 rounded-full bg-cartNumBg flex items-center justify-center">
               <p className="text-sm text-white font-bold">2</p>
             </div>
+          </div> */}
+          <div className="flex">
+            <p className="text-sm font-bold">Olá</p>
+            <p className="text-sm font-bold">, Esio</p>
           </div>
           <Link href="/dashboard">
             <div className="flex items-center gap-3">
               <p className="text-headingColor text-xl font-bold cursor-pointer">
-                MoraGogi
+                MaraGogi
               </p>
             </div>
           </Link>
-          <div className='relative'>
+          <div className='flex relative items-center'>
+            <MdOutlineVisibilityOff className='w-10 h-6'/>
             <MdAccountCircle
               className="w-10 min-w-[40px] h-10 min-h-[40px] drop-shawdow-xl cursor-pointer"
               onClick={login}
