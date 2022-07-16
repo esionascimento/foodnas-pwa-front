@@ -7,7 +7,7 @@ const ButtonComponent:FC<IDashboardButton> = (props) => {
     <Link href={props.href}>
       <button
         type="button"
-        className={`bg-gradient-to-br ${props.config.background} ${props.config.size} w-full md:w-auto px-4 py-2 rounded-lg hover:shadow-lg transition-all ease-in-out duration-100`}
+        className={`bg-gradient-to-br w-full md:w-auto px-4 py-2 rounded-lg hover:shadow-lg transition-all ease-in-out duration-100 ${props.config.background} ${props.config.size}`}
       >
         {props.text}
       </button>
