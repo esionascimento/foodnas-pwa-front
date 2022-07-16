@@ -1,11 +1,12 @@
 import { useState } from 'react';
 import Link from 'next/link'
-import { MdAccountCircle, MdOutlineVisibilityOff } from "react-icons/md";
+import { MdAccountCircle, MdOutlineVisibilityOff, MdOutlineVisibility } from "react-icons/md";
 import Image from 'next/image';
 import { configMenuLi } from 'src/config/header';
 
 const HeaderComponent = () => {
   const [isMenu, setIsMenu] = useState(false);
+  const [isVisibleBalance, setIsVisibleBalance] = useState(true);
 
   const login = () => {
     setIsMenu(!isMenu);
@@ -68,6 +69,10 @@ const HeaderComponent = () => {
     setIsMenu(false);
   }
 
+  const handlerClickBalance = () => {
+    setIsVisibleBalance(!isVisibleBalance);
+  }
+
   return (
     <>
       <header className="fixed z-50 w-screen p-2 px-2 md:px-16 bg-bgHeader md:bg-white">
@@ -86,6 +91,7 @@ const HeaderComponent = () => {
             {avatar()}
           </div>
         </div>
+
         {/* MOBILE */}
         <div className="flex items-center justify-between md:hidden w-full h-full">
           {/* <div className="relative flex items-center justify-center cursor-pointer">
@@ -108,7 +114,11 @@ const HeaderComponent = () => {
             </div>
           </Link>
           <div className='flex relative items-center'>
-            <MdOutlineVisibilityOff className='w-10 h-6'/>
+            {isVisibleBalance ?
+              <MdOutlineVisibilityOff onClick={handlerClickBalance} className='w-10 h-6'/>
+              :
+              <MdOutlineVisibility onClick={handlerClickBalance} className='w-10 h-6'/>
+            }
             <MdAccountCircle
               className="w-10 min-w-[40px] h-10 min-h-[40px] drop-shawdow-xl cursor-pointer"
               onClick={login}
