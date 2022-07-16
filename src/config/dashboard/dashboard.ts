@@ -24,7 +24,7 @@ export const buttonRegisterSales = {
 
 export const buttonAddStock = {
   text: "Adicionar Estoque",
-  href: "/add-stock",
+  href: "/adicionar-stock",
   config: {
     maxLength: 8,
     step: 1,
