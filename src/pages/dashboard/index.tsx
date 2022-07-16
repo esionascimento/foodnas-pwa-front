@@ -1,5 +1,5 @@
 import { Header } from "src/components/Header";
-import { Container } from 'src/components/Container';
+import Container from 'src/components/Container/Dashboard';
 
 const Dashboard = () => {
   return (
