@@ -1,6 +1,6 @@
 import { MdAccountCircle, MdDeliveryDining } from "react-icons/md";
 import ButtonComponent from 'src/components/Buttons';
-import { buttonNewOrder } from 'src/config/dashboard';
+import { buttonNewOrder } from 'src/config/dashboard/dashboard';
 
 const HeaderComponent = () => {
   return (
