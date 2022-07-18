@@ -105,7 +105,7 @@ export const inputFourPart: IComponentPropsInputs[] = [
   {
     id: 'qtdSave',
     text: "QTD a salvar",
-    disabled: false,
+    disabled: true,
     config: {
       type: 'number',
       maxLength: 8,
@@ -118,20 +118,7 @@ export const inputFourPart: IComponentPropsInputs[] = [
   {
     id: 'valueUnitary',
     text: "Valor Unitário",
-    disabled: false,
-    config: {
-      type: 'text',
-      maxLength: 8,
-      step: 1,
-      background: "bg-bgButtonOrange",
-      text: "",
-      size: "text-md"
-    }
-  },
-  {
-    id: 'valueBoxe',
-    text: "Valor Caixa",
-    disabled: false,
+    disabled: true,
     config: {
       type: 'text',
       maxLength: 8,
@@ -144,7 +131,7 @@ export const inputFourPart: IComponentPropsInputs[] = [
   {
     id: 'amount',
     text: "Valor Total",
-    disabled: false,
+    disabled: true,
     config: {
       type: 'text',
       maxLength: 8,
