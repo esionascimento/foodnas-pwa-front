@@ -4,32 +4,32 @@ export const buttonNewOrder = {
   config: {
     maxLength: 8,
     step: 1,
-    background: "bg-orange-400",
+    background: "bg-bgButtonOrange",
     text: "",
-    size: "text-lg"
+    size: "text-md"
   }
 }
 
 export const buttonRegisterSales = {
   text: "Registrar Venda",
-  href: "/register-sale",
+  href: "/registrar-venda",
   config: {
     maxLength: 8,
     step: 1,
-    background: "bg-orange-400",
+    background: "bg-bgButtonOrange",
     text: "",
-    size: "text-lg"
+    size: "text-md"
   }
 }
 
 export const buttonAddStock = {
   text: "Adicionar Estoque",
-  href: "/adicionar-stock",
+  href: "/adicionar-estoque",
   config: {
     maxLength: 8,
     step: 1,
-    background: "bg-orange-400",
+    background: "bg-bgButtonOrange",
     text: "",
-    size: "text-lg"
+    size: "text-md"
   }
 }
