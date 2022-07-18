@@ -3,6 +3,7 @@ module.exports = {
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx}',
     './src/components/**/*.{js,ts,jsx,tsx}',
+    './src/config/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
     extend: {
@@ -52,6 +53,7 @@ module.exports = {
         cartNumBg: "#e80013",
         primary: "#f5f3f3",
         bgHeader: "#E06D82",
+        bgButtonOrange: "#FB923C",
       },
     },
   },
