@@ -52,9 +52,10 @@ const HeaderComponent = () => {
   const menu = () => {
     return (
       <ul className="flex items-center gap-8">
-        {configMenuLi.map((data) => {
+        {configMenuLi.map((data, index) => {
           return (
             <li
+              key={`${data.text} + ${index}`}
               className="text-base text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer"
             >
               {data.text}
@@ -94,14 +95,6 @@ const HeaderComponent = () => {
 
         {/* MOBILE */}
         <div className="flex items-center justify-between md:hidden w-full h-full">
-          {/* <div className="relative flex items-center justify-center cursor-pointer">
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7" fill="none" viewBox="0 0 22 22" stroke="#4D4D4D" strokeWidth={2}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
-            </svg>
-            <div className="absolute -top-3 -right-3 w-6 h-6 rounded-full bg-cartNumBg flex items-center justify-center">
-              <p className="text-sm text-white font-bold">2</p>
-            </div>
-          </div> */}
           <div className="flex">
             <p className="text-sm font-bold">Olá</p>
             <p className="text-sm font-bold">, Esio</p>
@@ -127,12 +120,13 @@ const HeaderComponent = () => {
               <div
                 className='w-40 bg-gray-50 shadow-lg rounded-lg flex flex-col absolute top-12 right-0 px-4 py-2'
               >
-                {configMenuLi.map((data) => {
+                {configMenuLi.map((data, index) => {
                   return (
                     <>
                     {data.text === 'Sair' ?
                       (
                         <li
+                          key={`${data.text} + ${index}`}
                           className='px-4 py-2 flex rounded-md items-center shadow-md justify-center gap-3 cursor-pointer bg-gray-200 hover:bg-gray-300 transition-all duration-100 ease-in-out text-textColor text-base'
                           onClick={logout}
                         >
