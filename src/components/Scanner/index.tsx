@@ -2,31 +2,35 @@ import react, { useState } from 'react';
 import MinScanner from "./minScanner";
 import Quagga from '@ericblade/quagga2';
 
-const Scanner = () => {
+const Scanner = ({setValueBarcode}: any) => {
   const [camera, setCamera] = useState(false);
-  const [result, setResult] = useState(null);
 
   const onDetected = (result: any) => {
-    setResult(result);
-    Quagga.offDetected(onDetected);
-
-    let isbn = result.codeResult.code;
-    alert(isbn);
+    setValueBarcode(result);
+    setCamera(false);
   };
 
   const handlerStopCameras = (result: any) => {
-    setCamera(!camera);
-    Quagga.offDetected(onDetected);
+    setCamera(true);
   }
 
   return (
-    <div className="App">
-      <p>{result ? result : "Scanning..."}</p>
-      <button onClick={handlerStopCameras}>
-        {camera ? "Stop" : "Start"}
+    <div>
+      <button
+        type="button"
+        className="text-white w-full bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm p-1 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+        onClick={handlerStopCameras}
+      >
+        Ler
       </button>
+
       <div className="container">
-        {camera && <MinScanner onDetected={onDetected} Quagga={Quagga} />}
+        {camera ?
+          <>
+            <MinScanner onDetected={onDetected} />
+          </>
+        : null
+        }
       </div>
     </div>
   );
