@@ -1,10 +1,11 @@
-import { IComponentPropsInputs } from "src/interface/add-stock";
+import { IComponentPropsInputs } from "src/interface/inputs";
 
 export const inputTwoPart: IComponentPropsInputs[] = [
   {
     id: 'name',
     text: "Nome",
     disabled: true,
+    visible: true,
     config: {
       type: 'text',
       maxLength: 8,
@@ -18,6 +19,7 @@ export const inputTwoPart: IComponentPropsInputs[] = [
     id: 'ml',
     text: "ML",
     disabled: true,
+    visible: true,
     config: {
       type: 'text',
       maxLength: 8,
@@ -31,6 +33,7 @@ export const inputTwoPart: IComponentPropsInputs[] = [
     id: 'type',
     text: "Tipo",
     disabled: true,
+    visible: true,
     config: {
       type: 'text',
       maxLength: 8,
@@ -47,6 +50,7 @@ export const inputThreePart: IComponentPropsInputs[] = [
     id: 'typePacking',
     text: "Caixa | UND",
     disabled: false,
+    visible: true,
     config: {
       type: 'select',
       maxLength: 8,
@@ -64,6 +68,7 @@ export const inputThreePart: IComponentPropsInputs[] = [
     id: 'qtdBoxes',
     text: "QTD em caixa",
     disabled: false,
+    visible: true,
     config: {
       type: 'number',
       maxLength: 8,
@@ -77,6 +82,7 @@ export const inputThreePart: IComponentPropsInputs[] = [
     id: 'addQtd',
     text: "Adicionar QTD",
     disabled: false,
+    visible: true,
     config: {
       type: 'number',
       maxLength: 8,
@@ -90,6 +96,7 @@ export const inputThreePart: IComponentPropsInputs[] = [
     id: 'value',
     text: "Valor Unitário",
     disabled: false,
+    visible: true,
     config: {
       type: 'text',
       maxLength: 8,
@@ -106,6 +113,7 @@ export const inputFourPart: IComponentPropsInputs[] = [
     id: 'qtdSave',
     text: "QTD a salvar",
     disabled: true,
+    visible: true,
     config: {
       type: 'number',
       maxLength: 8,
@@ -119,6 +127,7 @@ export const inputFourPart: IComponentPropsInputs[] = [
     id: 'valueUnitary',
     text: "Valor Unitário",
     disabled: true,
+    visible: true,
     config: {
       type: 'text',
       maxLength: 8,
@@ -132,6 +141,7 @@ export const inputFourPart: IComponentPropsInputs[] = [
     id: 'amount',
     text: "Valor Total",
     disabled: true,
+    visible: true,
     config: {
       type: 'text',
       maxLength: 8,
