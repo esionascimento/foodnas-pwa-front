@@ -6,6 +6,7 @@ export const inputTwoPart: IComponentPropsInputs[] = [
     text: "Nome",
     disabled: true,
     visible: true,
+    defaultValue: "",
     config: {
       type: 'text',
       maxLength: 8,
@@ -20,6 +21,7 @@ export const inputTwoPart: IComponentPropsInputs[] = [
     text: "ML",
     disabled: true,
     visible: true,
+    defaultValue: "",
     config: {
       type: 'text',
       maxLength: 8,
@@ -34,6 +36,7 @@ export const inputTwoPart: IComponentPropsInputs[] = [
     text: "Tipo",
     disabled: true,
     visible: true,
+    defaultValue: "",
     config: {
       type: 'text',
       maxLength: 8,
@@ -51,6 +54,7 @@ export const inputThreePart: IComponentPropsInputs[] = [
     text: "Caixa | UND",
     disabled: false,
     visible: true,
+    defaultValue: "",
     config: {
       type: 'select',
       maxLength: 8,
@@ -69,6 +73,7 @@ export const inputThreePart: IComponentPropsInputs[] = [
     text: "QTD em caixa",
     disabled: false,
     visible: true,
+    defaultValue: "",
     config: {
       type: 'number',
       maxLength: 8,
@@ -83,6 +88,7 @@ export const inputThreePart: IComponentPropsInputs[] = [
     text: "Adicionar QTD",
     disabled: false,
     visible: true,
+    defaultValue: "",
     config: {
       type: 'number',
       maxLength: 8,
@@ -97,6 +103,7 @@ export const inputThreePart: IComponentPropsInputs[] = [
     text: "Valor Unitário",
     disabled: false,
     visible: true,
+    defaultValue: "",
     config: {
       type: 'text',
       maxLength: 8,
@@ -114,6 +121,7 @@ export const inputFourPart: IComponentPropsInputs[] = [
     text: "QTD a salvar",
     disabled: true,
     visible: true,
+    defaultValue: "",
     config: {
       type: 'number',
       maxLength: 8,
@@ -128,6 +136,7 @@ export const inputFourPart: IComponentPropsInputs[] = [
     text: "Valor Unitário",
     disabled: true,
     visible: true,
+    defaultValue: "",
     config: {
       type: 'text',
       maxLength: 8,
@@ -142,6 +151,7 @@ export const inputFourPart: IComponentPropsInputs[] = [
     text: "Valor Total",
     disabled: true,
     visible: true,
+    defaultValue: "",
     config: {
       type: 'text',
       maxLength: 8,
