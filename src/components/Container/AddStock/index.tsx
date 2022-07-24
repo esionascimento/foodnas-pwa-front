@@ -57,26 +57,26 @@ const AddStock = () => {
             </div>
           </div>
           <div className="py-2 flex justify-between items-center">
-            {inputTwoPart.map((data) => {
+            {inputTwoPart.map((data, index) => {
               return (
-                <Inputs key={data.id} {...data} control={control} />
+                <Inputs key={`${data.id}-${index}-addStock`} {...data} control={control} />
               )
             })}
           </div>
           <div className="py-2 flex justify-between items-center">
             <div className="grid grid-cols-3 md:grid-cols-2  divide-black">
-              {inputThreePart.map((data) => {
+              {inputThreePart.map((data, index) => {
                 return (
-                  <Inputs key={data.id} {...data} control={control} />
+                  <Inputs key={`${data.id}-${index}-addStock`} {...data} control={control} />
                 )
               })}
             </div>
           </div>
           <div className="py-2 flex justify-between items-center">
             <div className="grid grid-cols-3 md:grid-cols-2  divide-black">
-              {inputFourPart.map((data) => {
+              {inputFourPart.map((data, index) => {
                 return (
-                  <Inputs key={data.id} {...data} control={control} />
+                  <Inputs key={`${data.id}-${index}-addStock`} {...data} control={control} />
                 )
               })}
             </div>
