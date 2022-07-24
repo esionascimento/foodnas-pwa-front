@@ -122,28 +122,27 @@ const HeaderComponent = () => {
               >
                 {configMenuLi.map((data, index) => {
                   return (
-                    <>
-                    {data.text === 'Sair' ?
-                      (
-                        <li
-                          key={`${data.text} + ${index}`}
-                          className='px-4 py-2 flex rounded-md items-center shadow-md justify-center gap-3 cursor-pointer bg-gray-200 hover:bg-gray-300 transition-all duration-100 ease-in-out text-textColor text-base'
-                          onClick={logout}
-                        >
-                          Sair
-                        </li>
-                      )
-                      : (
-                        <Link href={data.href}>
+                    <div key={`${data.text}-${index}-header`}>
+                      {data.text === 'Sair' ?
+                        (
                           <li
-                            className="px-4 py-2 flex items-center gap-3 cursor-pointer hover:bg-slate-100 transition-all duration-100 ease-in-out text-textColor text-base"
-                            >
-                            {data.text}
+                            className='px-4 py-2 flex rounded-md items-center shadow-md justify-center gap-3 cursor-pointer bg-gray-200 hover:bg-gray-300 transition-all duration-100 ease-in-out text-textColor text-base'
+                            onClick={logout}
+                          >
+                            Sair
                           </li>
-                        </Link>
-                      )
-                    }
-                    </>
+                        )
+                        : (
+                          <Link href={data.href}>
+                            <li
+                              className="px-4 py-2 flex items-center gap-3 cursor-pointer hover:bg-slate-100 transition-all duration-100 ease-in-out text-textColor text-base"
+                              >
+                              {data.text}
+                            </li>
+                          </Link>
+                        )
+                      }
+                    </div>
                   )
                 })}
               </div>
