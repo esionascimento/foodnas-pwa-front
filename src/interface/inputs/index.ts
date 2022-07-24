@@ -3,6 +3,7 @@ export interface IComponentPropsInputs {
   text: string;
   disabled: boolean;
   visible: boolean;
+  defaultValue: string;
   config: {
     type: string;
     maxLength: number;
