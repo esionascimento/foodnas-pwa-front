@@ -11,9 +11,11 @@ const AddStock = () => {
   const { control, handleSubmit, register, setValue } = useForm();
   const [valueBarcode, setValueBarcode] = useState();
 
+  const onSubmit = (data: any) => console.log(data);
+
   return (
     <>
-      <form>
+      <form onSubmit={handleSubmit(onSubmit)}>
         <div className="grid grid-cols-1 md:grid-cols-2 divide-y divide-black">
           <div className="py-2 flex items-start  justify-between">
             <div className="">
@@ -45,19 +47,19 @@ const AddStock = () => {
             </div>
           </div>
           <div className="py-2 flex justify-between items-center">
-          <div className="grid grid-cols-2 md:grid-cols-2  divide-black">
-            {inputTwoPart.map((data) => {
-              return (
-                <Inputs key={data.id} {...data} control={control} />
-              )
-            })}
+            <div className="grid grid-cols-2 md:grid-cols-2  divide-black">
+              {inputTwoPart.map((data, index) => {
+                return (
+                  <Inputs key={`${data.id}-${index}-store`} {...data} control={control} />
+                )
+              })}
             </div>
           </div>
           <div className="py-2 flex justify-between items-center">
             <div className="grid grid-cols-3 md:grid-cols-2  divide-black">
-              {inputThreePart.map((data) => {
+              {inputThreePart.map((data, index) => {
                 return (
-                  <Inputs key={data.id} {...data} control={control} />
+                  <Inputs key={`${data.id}-${index}-store`} {...data} control={control} />
                 )
               })}
             </div>
@@ -66,9 +68,9 @@ const AddStock = () => {
             <div>
               <p className="text-center p-1">Confirmar</p>
               <div className="grid grid-cols-3 md:grid-cols-2  divide-black">
-                {inputFourPart.map((data) => {
+                {inputFourPart.map((data, index) => {
                   return (
-                    <Inputs key={data.id} {...data} control={control} />
+                    <Inputs key={`${data.id}-${index}-store`} {...data} control={control} />
                     )
                   })}
               </div>
