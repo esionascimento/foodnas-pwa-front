@@ -38,7 +38,7 @@ const Inputs = (props: IComponentPropsInputs | any) => {
                     id="countries"
                     className={className}
                   >
-                    {props.option.map((data: any, index: number) => {
+                    {props.option?.map((data: any, index: number) => {
                       return (
                         <option key={`${data.id}-${index}-inputs`} className='' value={data.id}>{data.text}</option>
                       )
