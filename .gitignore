@@ -5,8 +5,11 @@
 /.pnp
 .pnp.js
 .env
-.vscode
 /dataMocky
+.swc
+
+#vscode
+.vscode
 
 # testing
 /coverage
