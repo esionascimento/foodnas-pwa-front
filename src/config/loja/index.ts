@@ -1,164 +1,172 @@
-import { IComponentPropsInputs } from "src/interface/inputs";
+import { IComponentPropsInputs } from 'src/interface/inputs';
 
 export const inputTwoPart: IComponentPropsInputs[] = [
   {
     id: 'name',
-    text: "Nome",
+    text: 'Nome',
     disabled: false,
     visible: true,
-    defaultValue: "",
+    defaultValue: '',
     config: {
       type: 'text',
       maxLength: 8,
       step: 1,
-      background: "bg-bgButtonOrange",
-      text: "",
-      size: "text-md"
-    }
+      background: 'bg-bgButtonOrange',
+      text: '',
+      size: 'text-md',
+    },
   },
   {
     id: 'typePacking',
-    text: "Caixa | UND",
+    text: 'Caixa | UND',
     disabled: false,
     visible: true,
-    defaultValue: "",
+    defaultValue: '',
     config: {
       type: 'select',
       maxLength: 8,
       step: 1,
-      background: "bg-bgButtonOrange",
-      text: "",
-      size: "text-md"
+      background: 'bg-bgButtonOrange',
+      text: '',
+      size: 'text-md',
     },
     option: [
-      {id: "caixa", text: "Caixa"},
-      {id: "separado", text: "Separado"},
+      { id: 'caixa', text: 'Caixa' },
+      { id: 'separado', text: 'Separado' },
     ],
   },
-  // {
-  //   id: 'type',
-  //   text: "Tipo",
-  //   disabled: false,
-  //   visible: false,
-  //   defaultValue: "", 
-  //   config: {
-  //     type: 'text',
-  //     maxLength: 8,
-  //     step: 1,
-  //     background: "bg-bgButtonOrange",
-  //     text: "",
-  //     size: "text-md"
-  //   }
-  // },
-]
+];
 
 export const inputThreePart: IComponentPropsInputs[] = [
   {
     id: 'ml',
-    text: "ML",
+    text: 'ML',
     disabled: false,
     visible: true,
-    defaultValue: "",
+    defaultValue: '',
     config: {
-      type: 'text',
+      type: 'select',
       maxLength: 8,
       step: 1,
-      background: "bg-bgButtonOrange",
-      text: "",
-      size: "text-md"
-    }
+      background: 'bg-bgButtonOrange',
+      text: '',
+      size: 'text-md',
+    },
+    option: [
+      { id: '200', text: '200ML' },
+      { id: '210', text: '210ML' },
+      { id: '250', text: '250ML' },
+      { id: '269', text: '269ML' },
+      { id: '300', text: '300ML' },
+      { id: '310', text: '310ML' },
+      { id: '330', text: '330ML' },
+      { id: '350', text: '350ML' },
+      { id: '355', text: '355ML' },
+      { id: '410', text: '410ML' },
+      { id: '473', text: '473ML' },
+      { id: '500', text: '500ML' },
+      { id: '600', text: '600ML' },
+      { id: '710', text: '710ML' },
+      { id: '740', text: '740ML' },
+      { id: '960', text: '960ML' },
+      { id: '1000', text: '1L' },
+      { id: '1500', text: '1L 500ML' },
+      { id: '2000', text: '2L' },
+      { id: '3300', text: '3L 300ML' },
+      { id: '5000', text: '5L' },
+    ],
   },
   {
     id: 'qtdBoxes',
-    text: "QTD em caixa",
+    text: 'QTD em caixa',
     disabled: false,
     visible: true,
-    defaultValue: "",
+    defaultValue: '',
     config: {
       type: 'number',
       maxLength: 8,
       step: 1,
-      background: "bg-bgButtonOrange",
-      text: "",
-      size: "text-md"
-    }
+      background: 'bg-bgButtonOrange',
+      text: '',
+      size: 'text-md',
+    },
   },
   {
     id: 'addQtd',
-    text: "Adicionar QTD",
+    text: 'Adicionar QTD',
     disabled: false,
     visible: true,
-    defaultValue: "",
+    defaultValue: '',
     config: {
       type: 'number',
       maxLength: 8,
       step: 1,
-      background: "bg-bgButtonOrange",
-      text: "",
-      size: "text-md"
-    }
+      background: 'bg-bgButtonOrange',
+      text: '',
+      size: 'text-md',
+    },
   },
   {
     id: 'value',
-    text: "Valor Unitário",
+    text: 'Valor Unitário',
     disabled: false,
     visible: true,
-    defaultValue: "",
+    defaultValue: '',
     config: {
       type: 'text',
       maxLength: 8,
       step: 1,
-      background: "bg-bgButtonOrange",
-      text: "",
-      size: "text-md"
-    }
+      background: 'bg-bgButtonOrange',
+      text: '',
+      size: 'text-md',
+    },
   },
-]
+];
 
 export const inputFourPart: IComponentPropsInputs[] = [
   {
     id: 'qtdSave',
-    text: "Nome",
+    text: 'Nome',
     disabled: true,
     visible: true,
-    defaultValue: "",
+    defaultValue: '',
     config: {
       type: 'number',
       maxLength: 8,
       step: 1,
-      background: "bg-bgButtonOrange",
-      text: "",
-      size: "text-md"
-    }
+      background: 'bg-bgButtonOrange',
+      text: '',
+      size: 'text-md',
+    },
   },
   {
     id: 'valueUnitary',
-    text: "Tipo",
+    text: 'Tipo',
     disabled: true,
     visible: true,
-    defaultValue: "",
+    defaultValue: '',
     config: {
       type: 'text',
       maxLength: 8,
       step: 1,
-      background: "bg-bgButtonOrange",
-      text: "",
-      size: "text-md"
-    }
+      background: 'bg-bgButtonOrange',
+      text: '',
+      size: 'text-md',
+    },
   },
   {
     id: 'amount',
-    text: "Código de barra",
+    text: 'Código de barra',
     disabled: true,
     visible: true,
-    defaultValue: "",
+    defaultValue: '',
     config: {
       type: 'text',
       maxLength: 8,
       step: 1,
-      background: "bg-bgButtonOrange",
-      text: "",
-      size: "text-md"
-    }
+      background: 'bg-bgButtonOrange',
+      text: '',
+      size: 'text-md',
+    },
   },
-]
+];
