@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Link from 'next/link'
 import { MdAccountCircle, MdOutlineVisibilityOff, MdOutlineVisibility } from "react-icons/md";
 import Image from 'next/image';
-import { configMenuLi } from 'src/config/header';
+import { configMenuLi, configHeaderMenuHamburguer } from 'src/config/header';
 
 const HeaderComponent = () => {
   const [isMenu, setIsMenu] = useState(false);
@@ -74,6 +74,48 @@ const HeaderComponent = () => {
     setIsVisibleBalance(!isVisibleBalance);
   }
 
+  function checkParent(t: { parentNode: any; }, elm: HTMLElement | null) {
+	  while(t.parentNode) {
+		if( t == elm ) {return true;}
+		t = t.parentNode;
+	  }
+	  return false;
+	}
+
+  const toggleMobileHamburguer = () => {
+    let userMenuDiv = document.getElementById("menuUser");
+    let userMenu = document.getElementById("menuUserButton");
+    
+    let navMenuDiv = document.getElementById("menuContentRotas");
+    let navMenu = document.getElementById("menuContentRotasButton");
+	
+	  document.onclick = check;
+
+    function check(e: { target: any; }){
+      let target = (e && e.target);
+
+      if (!checkParent(target, userMenuDiv)) {
+        if (checkParent(target, userMenu)) {
+          if (userMenuDiv?.classList.contains("invisible")) {
+          userMenuDiv.classList.remove("invisible");
+          } else {userMenuDiv?.classList.add("invisible");}
+        } else {
+          userMenuDiv?.classList.add("invisible");
+        }
+      }
+
+      if (!checkParent(target, navMenuDiv)) {
+        if (checkParent(target, navMenu)) {
+          if (navMenuDiv?.classList.contains("hidden")) {
+          navMenuDiv.classList.remove("hidden");
+          } else {navMenuDiv?.classList.add("hidden");}
+        } else {
+          navMenuDiv?.classList.add("hidden");
+        }
+      }
+    }
+  }
+
   return (
     <>
       <header className="fixed z-50 w-screen p-2 px-2 md:px-16 bg-bgHeader md:bg-white">
@@ -96,8 +138,39 @@ const HeaderComponent = () => {
         {/* MOBILE */}
         <div className="flex items-center justify-between md:hidden w-full h-full">
           <div className="flex">
-            <p className="text-sm font-bold">Olá</p>
-            <p className="text-sm font-bold">, Esio</p>
+            <div className="block lg:hidden pr-4">
+              <button id="menuContentRotasButton"
+                className="flex items-center px-3 py-2 border rounded text-gray-500 border-gray-600 hover:text-gray-100 hover:border-teal-500 appearance-none focus:outline-none"
+                onClick={() => toggleMobileHamburguer()}
+              >
+                <svg className="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
+              </button>
+            </div>
+            <div
+              className='w-40 shadow-lg rounded-lg flex flex-col absolute top-12 left-0'
+            >
+              <div
+                id="menuContentRotas"
+                className="w-full flex-grow lg:items-center lg:w-auto hidden lg:block mt-2 lg:mt-0 bg-gray-800 z-20"
+              >
+                <ul className="list-reset lg:flex flex-1 items-center px-4 md:px-0">
+                  {configHeaderMenuHamburguer.map((data) => {
+                    return (
+                      <li className="mr-6 my-2 md:my-0">
+                        <a
+                          href={data.href}
+                          className="block py-1 md:py-3 pl-1 text-blue-100  hover:text-blue-500 border-b-2 border-blue-200 hover:border-blue-400"
+                        >
+                          <span className="pb-1 md:pb-0 text-sm">
+                            {data.text}
+                          </span>
+                        </a>
+                      </li>
+                    )
+                  })}
+                </ul>
+              </div>
+            </div>
           </div>
           <Link href="/dashboard">
             <div className="flex items-center gap-3">
@@ -106,47 +179,56 @@ const HeaderComponent = () => {
               </p>
             </div>
           </Link>
-          <div className='flex relative items-center'>
-            {isVisibleBalance ?
-              <MdOutlineVisibilityOff onClick={handlerClickBalance} className='w-10 h-6'/>
-              :
-              <MdOutlineVisibility onClick={handlerClickBalance} className='w-10 h-6'/>
-            }
-            <MdAccountCircle
-              className="w-10 min-w-[40px] h-10 min-h-[40px] drop-shawdow-xl cursor-pointer"
-              onClick={login}
-            />
-            {isMenu && (
+          <div className="flex">
+            <div className='flex relative items-center'>
+              <div>
+                {isVisibleBalance ?
+                  <MdOutlineVisibilityOff onClick={handlerClickBalance} className='w-10 h-6'/>
+                  :
+                  <MdOutlineVisibility onClick={handlerClickBalance} className='w-10 h-6'/>
+                }
+              </div>
+              <div id="menuUserButton" className="px-1">
+                <MdAccountCircle
+                  className="w-10 min-w-[40px] h-10 min-h-[40px] drop-shawdow-xl cursor-pointer"
+                  onClick={() => toggleMobileHamburguer()}
+                />
+              </div>
+            </div>
+            <div
+              className='w-40 shadow-lg  flex flex-col absolute right-0'
+            >
               <div
-                className='w-40 bg-gray-50 shadow-lg rounded-lg flex flex-col absolute top-12 right-0 px-4 py-2'
+                id="menuUser"
+                className='bg-gray-900 shadow-md absolute mt-12 top-0 right-0 min-w-full overflow-auto z-30 invisible'
               >
                 {configMenuLi.map((data, index) => {
                   return (
-                    <div key={`${data.text}-${index}-header`}>
-                      {data.text === 'Sair' ?
+                    <ul key={`${data.text}-${index}-header`} className="list-reset lg:flex flex-1 items-center px-4 md:px-0">
+                      {data.text !== 'Sair' ?
                         (
-                          <li
-                            className='px-4 py-2 flex rounded-md items-center shadow-md justify-center gap-3 cursor-pointer bg-gray-200 hover:bg-gray-300 transition-all duration-100 ease-in-out text-textColor text-base'
-                            onClick={logout}
-                          >
-                            Sair
-                          </li>
-                        )
-                        : (
                           <Link href={data.href}>
                             <li
-                              className="px-4 py-2 flex items-center gap-3 cursor-pointer hover:bg-slate-100 transition-all duration-100 ease-in-out text-textColor text-base"
+                              className="px-4 py-2 flex items-center gap-3 cursor-pointer hover:bg-slate-100  text-textColor text-base"
                               >
                               {data.text}
                             </li>
                           </Link>
                         )
+                        : (
+                          <li
+                            className='px-4 py-2 m-2 flex rounded-md items-center shadow-md justify-center gap-3 cursor-pointer bg-gray-200 hover:bg-gray-300  text-textColor text-base'
+                            onClick={logout}
+                          >
+                            Sair
+                          </li>
+                        )
                       }
-                    </div>
+                    </ul>
                   )
                 })}
               </div>
-            )}
+            </div>
           </div>
         </div>
       </header>
