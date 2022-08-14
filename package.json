@@ -9,6 +9,7 @@
     "@apollo/client": "^3.6.9",
     "@ericblade/quagga2": "^1.7.0",
     "@reduxjs/toolkit": "^1.8.3",
+    "axios": "^0.27.2",
     "next": "latest",
     "next-pwa": "^5.5.4",
     "react": "18.1.0",
