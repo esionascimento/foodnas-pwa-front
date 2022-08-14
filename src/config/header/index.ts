@@ -1,10 +1,10 @@
 export const configMenuLi = [
-  {text: 'Loja', href: '/loja'},
-  {text: 'Integracao', href: '/integracao'},
-  {text: 'Sobre', href: '/sobre'},
-  {text: 'Serviços', href: '/servicos'},
-  {text: 'Sair', href: '/dashboard'}
-]
+  { text: 'Loja', href: '/loja' },
+  { text: 'Integracao', href: '/integracao' },
+  { text: 'Sobre', href: '/sobre' },
+  { text: 'Serviços', href: '/servicos' },
+  { text: 'Sair', href: '/dashboard' },
+];
 
 export const configHeaderMenuHamburguer = [
   {
@@ -15,12 +15,56 @@ export const configHeaderMenuHamburguer = [
       maxLength: 8,
       hoverText: 'hover:text-gray-100',
       background: 'bg-bgButtonOrange',
-      colorText: 'text-blue-400',
+      colorText: 'text-white',
       size: 'text-md',
-    }
+    },
   },
-  {text: 'Integracao', href: '/integracao'},
-  {text: 'Sobre', href: '/sobre'},
-  {text: 'Serviços', href: '/servicos'},
-  {text: 'Sair', href: '/dashboard'}
-]
+  {
+    text: 'Integracao',
+    href: '/integracao',
+    config: {
+      type: 'number',
+      maxLength: 8,
+      hoverText: 'hover:text-gray-100',
+      background: 'bg-bgButtonOrange',
+      colorText: 'text-white',
+      size: 'text-md',
+    },
+  },
+  {
+    text: 'Sobre',
+    href: '/sobre',
+    config: {
+      type: 'number',
+      maxLength: 8,
+      hoverText: 'hover:text-gray-100',
+      background: 'bg-bgButtonOrange',
+      colorText: 'text-white',
+      size: 'text-md',
+    },
+  },
+  {
+    text: 'Serviços',
+    href: '/servicos',
+    config: {
+      type: 'number',
+      maxLength: 8,
+      hoverText: 'hover:text-gray-100',
+      background: 'bg-bgButtonOrange',
+      colorText: 'text-white',
+      size: 'text-md',
+    },
+  },
+  {
+    text: 'Sair',
+    href: '/dashboard',
+    config: {
+      type: 'number',
+      maxLength: 8,
+      hoverText: 'hover:text-gray-100',
+      background: 'bg-bgButtonOrange',
+      colorText: 'text-white',
+      size: 'text-md',
+    },
+  },
+];
