@@ -6,12 +6,16 @@ import { inputTwoPart, inputThreePart, inputFourPart } from "src/config/loja";
 import { useForm } from "react-hook-form";
 import Inputs from 'src/components/Inputs';
 import Scanner from 'src/components/Scanner';
+import * as api from "src/service/req.api";
 
 const AddStock = () => {
   const { control, handleSubmit, register, setValue } = useForm();
   const [valueBarcode, setValueBarcode] = useState();
 
-  const onSubmit = (data: any) => console.log(data);
+  const onSubmit = async (data: any) => {
+    const resultProdutosAll = await api.postCreateProduto(data)
+    // if (resultProdutosAll.message !== "success") return;
+  }
 
   return (
     <>
@@ -64,7 +68,7 @@ const AddStock = () => {
               })}
             </div>
           </div>
-          <div className="py-2 flex justify-between items-center">
+          {/* <div className="py-2 flex justify-between items-center">
             <div>
               <p className="text-center p-1">Confirmar</p>
               <div className="grid grid-cols-3 md:grid-cols-2  divide-black">
@@ -75,7 +79,7 @@ const AddStock = () => {
                   })}
               </div>
             </div>
-          </div>
+          </div> */}
           <div className="py-2 flex justify-between items-center">
             <button
               type="submit"
