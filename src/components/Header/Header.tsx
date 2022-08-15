@@ -174,6 +174,7 @@ const HeaderComponent = () => {
           </div>
         </div>
       </header>
+      {/* Menu Left */}
       <div
         id="menuContentRotas"
         className='hidden'
@@ -191,14 +192,15 @@ const HeaderComponent = () => {
                 {configHeaderMenuHamburguer.map((data) => {
                   return (
                     <li className="mr-6 my-2 md:my-0">
-                      <a
-                        href={data.href}
-                        className={`block py-1 md:py-3 pl-1 ${data.config?.colorText}  hover:text-blue-500 border-b-2 border-blue-200 hover:border-blue-400`}
-                      >
-                        <span className="pb-1 md:pb-0 text-sm">
-                          {data.text}
-                        </span>
-                      </a>
+                      <Link href={data.href}>
+                        <a
+                          className={`block py-1 md:py-3 pl-1 ${data.config?.colorText}  hover:text-blue-500 border-b-2 border-blue-200 hover:border-blue-400`}
+                          >
+                          <span className="pb-1 md:pb-0 text-sm">
+                            {data.text}
+                          </span>
+                        </a>
+                      </Link>
                     </li>
                   )
                 })}
@@ -236,6 +238,7 @@ const HeaderComponent = () => {
           </ul> */}
         </>
       </div>
+      {/* Menu Right */}
       <div
         className='w-40 shadow-lg  flex flex-col absolute right-0'
       >
