@@ -208,12 +208,16 @@ const HeaderComponent = () => {
             </ul>
           </div>
           <div className="mx-4">
-            <a href="https://www.creative-tim.com/learning-lab/tailwind/html/quick-start/argon-dashboard/" target="_blank" className="inline-block w-full px-8 py-2 mb-4 font-bold leading-normal text-center text-white capitalize transition-all ease-in rounded-lg shadow-md bg-slate-700 bg-150 text-size-xs hover:shadow-xs hover:-translate-y-px"
+            <a
+              href="/dashboard"
+              target="_blank"
+              className="inline-block w-full px-8 py-2 mb-4 font-bold leading-normal text-center text-white capitalize transition-all ease-in rounded-lg shadow-md bg-slate-700 bg-150 text-size-xs hover:shadow-xs hover:-translate-y-px"
             >
               Novidades
             </a>
             <a
-              className="inline-block w-full px-8 py-2 font-bold leading-normal text-center text-white align-middle transition-all ease-in bg-blue-500 border-0 rounded-lg shadow-md select-none bg-150 bg-x-25 text-size-xs hover:shadow-xs hover:-translate-y-px" href="javascript:;"
+              href="/"
+              className="inline-block w-full px-8 py-2 font-bold leading-normal text-center text-white align-middle transition-all ease-in bg-blue-500 border-0 rounded-lg shadow-md select-none bg-150 bg-x-25 text-size-xs hover:shadow-xs hover:-translate-y-px"
             >
               Sair
             </a>
