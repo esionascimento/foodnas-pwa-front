@@ -2,7 +2,7 @@ import { IComponentPropsInputs } from 'src/interface/inputs';
 
 export const inputTwoPart: IComponentPropsInputs[] = [
   {
-    id: 'name',
+    id: 'nome',
     text: 'Nome',
     disabled: false,
     visible: true,
@@ -17,11 +17,11 @@ export const inputTwoPart: IComponentPropsInputs[] = [
     },
   },
   {
-    id: 'typePacking',
+    id: 'tipo',
     text: 'Caixa | UND',
     disabled: false,
     visible: true,
-    defaultValue: '',
+    defaultValue: 'caixa',
     config: {
       type: 'select',
       maxLength: 8,
@@ -32,7 +32,7 @@ export const inputTwoPart: IComponentPropsInputs[] = [
     },
     option: [
       { id: 'caixa', text: 'Caixa' },
-      { id: 'separado', text: 'Separado' },
+      { id: 'unidade', text: 'Unidade' },
     ],
   },
 ];
@@ -43,7 +43,7 @@ export const inputThreePart: IComponentPropsInputs[] = [
     text: 'ML',
     disabled: false,
     visible: true,
-    defaultValue: '',
+    defaultValue: '200',
     config: {
       type: 'select',
       maxLength: 8,
@@ -77,8 +77,8 @@ export const inputThreePart: IComponentPropsInputs[] = [
     ],
   },
   {
-    id: 'qtdBoxes',
-    text: 'QTD em caixa',
+    id: 'quantidade',
+    text: 'Quantidade',
     disabled: false,
     visible: true,
     defaultValue: '',
@@ -92,28 +92,13 @@ export const inputThreePart: IComponentPropsInputs[] = [
     },
   },
   {
-    id: 'addQtd',
-    text: 'Adicionar QTD',
-    disabled: false,
-    visible: true,
-    defaultValue: '',
-    config: {
-      type: 'number',
-      maxLength: 8,
-      step: 1,
-      background: 'bg-bgButtonOrange',
-      text: '',
-      size: 'text-md',
-    },
-  },
-  {
-    id: 'value',
+    id: 'valor',
     text: 'Valor Unitário',
     disabled: false,
     visible: true,
     defaultValue: '',
     config: {
-      type: 'text',
+      type: 'number',
       maxLength: 8,
       step: 1,
       background: 'bg-bgButtonOrange',
