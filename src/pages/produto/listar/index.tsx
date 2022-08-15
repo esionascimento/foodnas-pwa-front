@@ -1,6 +1,6 @@
 import ComponentTable from "@Components/Table";
 import { Header } from "src/components/Header";
-import * as api from "src/services/req.api";
+import * as api from "src/service/req.api";
 import { useEffect, useState } from "react";
 import { configTableProdutoAll } from "src/config/table";
 
