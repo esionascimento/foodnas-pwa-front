@@ -20,6 +20,30 @@ export const configHeaderMenuHamburguer = [
     },
   },
   {
+    text: 'Listar Produtos',
+    href: '/produto/listar',
+    config: {
+      type: 'number',
+      maxLength: 8,
+      hoverText: 'hover:text-gray-100',
+      background: 'bg-bgButtonOrange',
+      colorText: 'text-white',
+      size: 'text-md',
+    },
+  },
+  {
+    text: 'Criar Produto',
+    href: '/produto/criar',
+    config: {
+      type: 'number',
+      maxLength: 8,
+      hoverText: 'hover:text-gray-100',
+      background: 'bg-bgButtonOrange',
+      colorText: 'text-white',
+      size: 'text-md',
+    },
+  },
+  {
     text: 'Integracao',
     href: '/integracao',
     config: {
