@@ -24,7 +24,7 @@ const HeaderComponent = () => {
             <ButtonComponent {...buttonAddStock} />
           </div>
         </div>
-        
+
       </div>
     </>
   )
