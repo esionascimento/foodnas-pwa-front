@@ -10,7 +10,7 @@ const ComponentsTableColumns: FC<Props> = ({ columns }) => {
     <thead className="text-xs uppercase text-slate-400 bg-slate-50 rounded-sm">
       <tr>
         {columns.map((column: any) => (
-          <th className="p-2">
+          <th className="p-1">
             <div className="font-semibold text-left">{column?.label}</div>
           </th>
         ))}
