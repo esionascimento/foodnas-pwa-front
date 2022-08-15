@@ -18,7 +18,7 @@ const Inputs = (props: IComponentPropsInputs | any) => {
           <Controller
             key={`${props.id}-${props.title}`}
             control={props.control}
-            defaultValue={""}
+            defaultValue={props.defaultValue}
             name={props.id}
             render={({ field, fieldState: { error } }) => {
               return (
